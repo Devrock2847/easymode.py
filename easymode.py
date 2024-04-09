@@ -1,10 +1,10 @@
-
 from __future__ import annotations
 
 from ansible.cli import CLI
 
 import os
 import stat
+import cmd
 
 from ansible import constants as C
 from ansible import context
@@ -21,7 +21,7 @@ from ansible.utils.display import Display
 
 display = Display()
 
-class easyModeCLI(CLI):
+class easyModeCLI(CLI, cmd.Cmd):
 	name = "ansible-easymode"
 
 	def init_parser(self):
